@@ -308,14 +308,33 @@ Figma es una de las herramientas más populares para diseñar y prototipar inter
 Una de las mayores ventajas de Figma para este curso es que puedes acceder a una licencia educacional gratuita con tu correo institucional. Esta licencia permite colaborar en equipos, utilizar bibliotecas compartidas y acceder a funcionalidades premium sin costo. Para solicitarla, visita:
 🔗 https://www.figma.com/education/
 
-Como trabajaremos con Material UI, Figma ofrece kits oficiales que ya incluyen los componentes del sistema de diseño de Google. Esto significa que los elementos que diseñes en Figma pueden ser trasladados a código de forma más rápida y precisa, respetando estilos, jerarquía visual y patrones de interacción. Al construir tu aplicación TravelLog, podrás usar Figma para prototipar pantallas como el listado de viajes, el formulario para registrar una nueva entrada o la galería de imágenes, asegurándote de que el diseño esté alineado con lo que luego implementarás usando MUI en React.
+Como trabajaremos con Material UI, Figma ofrece UI kits oficiales que ya incluyen los componentes del sistema de diseño de Google. Esto significa que los elementos que diseñes en Figma los podrás encontrar en la biblioteca de React, respetando estilos, jerarquía visual y patrones de interacción. Concretamente, al construir tu aplicación TravelLog, podrás usar Figma para prototipar pantallas como el listado de viajes, el formulario para registrar una nueva entrada o la galería de imágenes, asegurándote de que el diseño esté alineado con lo que luego implementarás usando MUI en React.
 
-Puedes acceder al kit oficial de Material 3 Design para Figma aquí:
-[Material UI for Figma (and MUI X)](https://www.figma.com/community/file/912837788133317724/material-ui-for-figma-and-mui-x)
+UI Kits sugeridos:
 
-**Consejo:** al usar este kit, copia los componentes que necesites a tu archivo de diseño personal, y úsalos para construir tus pantallas. Puedes usar la opción de Auto Layout para asegurar que el diseño sea responsive desde el inicio.
+* [Material 3 Design Kit](https://www.figma.com/community/file/1035203688168086460) — Versión oficial de Material Design 3 de Google. Útil para seguir las guías más recientes de diseño móvil.
+* [Material UI for Figma (and MUI X)](https://www.figma.com/community/file/912837788133317724/material-ui-for-figma-and-mui-x) — Kit adaptado a la librería MUI de React, ideal para diseñar componentes que luego implementaremos en el proyecto.
+* [Minimal Mockups](https://www.figma.com/design/3uoWgyChDi0RDQGsfTa7G6?fuid=1404551889925454225) — Conjunto de device mockups minimalistas para presentar tu diseño dentro de un marco de teléfono.
 
-## 3.1 Prototipado de una vista de Login con Figma
+Nota: También estará permitido usar Axure RP. Sin embargo, para prototipar con MUI en Axure se requieren bibliotecas de componentes generalmente comerciales, para las cuales no contamos con licencia en el curso.
+
+## 3.1 Cómo habilitar un UI kit en tu archivo de Figma
+
+Abre el enlace del UI kit y haz clic en Duplicate para guardarlo en tu espacio de trabajo.
+
+* Desde el archivo duplicado, ve al panel Assets → Libraries (icono de libro) y haz clic en Publish para publicarlo como biblioteca.
+* Abre el archivo de tu proyecto y, en el mismo panel Assets, activa la biblioteca para que sus componentes estén disponibles.
+* Ahora podrás arrastrar componentes desde el panel Assets o buscarlos por nombre, sin necesidad de abrir el archivo original.
+
+## 3.2 Copiar/pegar vs. usar bibliotecas publicadas
+
+**Copiar/pegar:** Útil para elementos únicos o cuando necesitas modificar el diseño de manera libre sin mantener vínculo con el original. Común para usar ejemplos completos que vienen en los kits como “pantallas de muestra”.
+
+**Usar como biblioteca:** Permite insertar instancias de componentes que mantienen vínculo con el original. Si el componente en la biblioteca cambia (por ejemplo, un color o tipografía), podrás actualizar todas las instancias en tu proyecto de forma centralizada.
+
+**Recomendación:** Para elementos básicos como botones, campos de texto o tipografía, usa la biblioteca publicada. Para mockups de dispositivos o layouts de ejemplo, copiar/pegar es suficiente.
+
+## 3.2 Prototipado de una vista de Login con Figma
 
 Sigue estos pasos para crear tu primera pantalla de interfaz: el formulario de inicio de sesión (Login) de una aplicación móvil. Este diseño servirá como base para la implementación posterior en React usando Material UI.
 
@@ -324,23 +343,12 @@ Sigue estos pasos para crear tu primera pantalla de interfaz: el formulario de i
 * Haz clic en "New design file".
 * Cambia el nombre del archivo a algo como Login UI.
 
-**Paso 2.** Importa los componentes desde el kit de Material UI
-* Abre el kit de Material UI para Figma:
-🔗 Material UI for Figma (and MUI X)
-* Haz clic en "Open in Figma" y luego en "Duplicate" para guardar una copia en tu espacio de trabajo.
-* Desde el kit duplicado, copia los siguientes componentes a tu archivo:     
-  * TextField (para correo electrónico y contraseña)
-  * Button (para el botón de "Iniciar sesión")
-  * Typography (para el título de la pantalla)
-  * Checkbox (para “Recordarme”)
-  * Link (para “¿Olvidaste tu contraseña?”)
-
-**Paso 3.** Crea un frame con tamaño adecuado. 
+**Paso 2.** Crea un frame con tamaño adecuado. 
 * Inserta un Frame del tipo Phone (e.g., iPhone 13/14) o define tu propio tamaño (por ejemplo, 360x640).
 * Activa Auto Layout para asegurar que los elementos se distribuyan con consistencia vertical y sean fáciles de reordenar.
 * Agrega márgenes laterales de al menos 16px y un espaciado vertical de 24px entre elementos.
 
-**Paso 4.** Diseña la estructura de la vista. 
+**Paso 3.** Diseña la estructura de la vista. 
 
 * Dentro del frame, organiza los elementos de la siguiente forma:
 
@@ -359,14 +367,14 @@ Sigue estos pasos para crear tu primera pantalla de interfaz: el formulario de i
 * Usa variantes del sistema tipográfico de Material (`h5`, `body1`, `caption`).
 * Usa botones `contained` para acciones primarias, y `text` para enlaces.
 
-**Paso 5.** Aplica estilos desde el sistema de Material Design
+**Paso 4.** Aplica estilos desde el sistema de Material Design
 * Usa colores, fuentes y tamaños definidos en el tema base del kit.
 * Aplica elevación o un contenedor (`Card`, `Paper`) si quieres resaltar el formulario sobre un fondo.
 
-**Paso 6.** Prototipa la navegación básica. 
+**Paso 5.** Prototipa la navegación básica. 
 * Agrega un segundo frame vacío llamado "Home".
 * Usa la pestaña Prototype en Figma para vincular el botón "Iniciar sesión" a ese segundo frame como si fuera la pantalla siguiente tras autenticarse.
 
-**Paso 7.** Verifica y presenta.
+**Paso 6.** Verifica y presenta.
 * Usa Present para visualizar la experiencia en modo interactivo.
 * Exporta tu prototipo como PDF o comparte el enlace con tu equipo.
